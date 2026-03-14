@@ -77,6 +77,8 @@ void Update()
             FollowCam.POI = projectile;
             Instantiate<GameObject>(projLinePrefab, projectile.transform);
             projectile = null;
+            MissionDemolition.SHOT_FIRED();
+            
         }
 
     }
