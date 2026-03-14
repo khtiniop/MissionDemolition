@@ -177,6 +177,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &398388099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3076868226950698760, guid: e84c8a8431d7e294b940bc30ba0dec87, type: 3}
+  m_PrefabInstance: {fileID: 2722421803398275338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &398388104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398388099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa9a67dc9b521f447989db3f26b7d34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2722421803030957211, guid: e84c8a8431d7e294b940bc30ba0dec87, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2722421803030957211, guid: e84c8a8431d7e294b940bc30ba0dec87, type: 3}
       propertyPath: m_LocalPosition.y
@@ -580,5 +597,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9073986209057909492, guid: e2cf6abc60fe75849842962e532beb8b, type: 3}
+      propertyPath: projLinePrefab
+      value: 
+      objectReference: {fileID: 3371908954196584243, guid: 66de227962e27264c9d4158a22c71ac2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2cf6abc60fe75849842962e532beb8b, type: 3}
