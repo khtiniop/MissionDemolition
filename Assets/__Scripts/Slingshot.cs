@@ -15,12 +15,17 @@ public class Slingshot : MonoBehaviour
     public Vector3 launchPos;
     public GameObject projectile;
     public bool aimingMode;
+    private LineRenderer lineRend; //line renderer
+    public Transform bandAnchor; //line renderer
+
     void Awake()
     {
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
         launchPos = launchPointTrans.position; 
+        lineRend = GetComponent<LineRenderer>(); //line render
+        lineRend.enabled = false; //line render
     }
 
 
@@ -45,6 +50,7 @@ void OnMouseDown()
         projectile = Instantiate(projectilePrefab) as GameObject;
         projectile.transform.position = launchPos;
         projectile.GetComponent<Rigidbody>().isKinematic=true;
+        lineRend.enabled = true; //line renderer
     }
 
 
@@ -68,6 +74,8 @@ void Update()
         }
         Vector3 projPos = launchPos + mouseDelta;
         projectile.transform.position = projPos;
+        lineRend.SetPosition(0, bandAnchor.position); //line render
+        lineRend.SetPosition(1, projPos);//line render
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -80,6 +88,8 @@ void Update()
             Instantiate<GameObject>(projLinePrefab, projectile.transform);
             projectile = null;
             MissionDemolition.SHOT_FIRED();
+
+            lineRend.enabled = false; //line render
             
         }
 

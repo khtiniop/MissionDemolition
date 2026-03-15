@@ -19,6 +19,7 @@ public class MissionDemolition : MonoBehaviour
     public TMP_Text uitShots;
     public Vector3 castlePos;
     public GameObject[] castles;
+    public GameObject gameOverPanel;
 
     [Header("Dynamic")]
     public int level;
@@ -75,15 +76,18 @@ public class MissionDemolition : MonoBehaviour
     }
 
     void NextLevel()
+{
+    level++;
+
+    if (level == levelMax)
     {
-        level++;
-        if (level == levelMax)
-        {
-            level = 0;
-            shotsTaken = 0;
-        }
-        StartLevel();
+        gameOverPanel.SetActive(true);
+        mode = GameMode.idle;
+        return;
     }
+
+    StartLevel();
+}
 
     static public void SHOT_FIRED()
     {
@@ -94,4 +98,12 @@ public class MissionDemolition : MonoBehaviour
     {
         return S.castle;
     }
+
+    public void RestartGame()
+{
+    level = 0;
+    shotsTaken = 0;
+    gameOverPanel.SetActive(false);
+    StartLevel();
+}
 }
