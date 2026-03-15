@@ -58,6 +58,8 @@ void Update()
 
         Vector3 mouseDelta = mousePos3D - launchPos;
 
+        FollowCam.SWITCH_VIEW(FollowCam.eView.slingshot);
+
         float maxMagnitude = this.GetComponent<SphereCollider>().radius;
         if(mouseDelta.magnitude > maxMagnitude)
         {
