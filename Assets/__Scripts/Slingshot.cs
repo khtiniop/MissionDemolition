@@ -8,7 +8,7 @@ public class Slingshot : MonoBehaviour
     public GameObject projectilePrefab;
     public float velocityMult = 10f;
     public GameObject projLinePrefab;
-
+    public AudioSource snapSound; //snapping sound :)
 
     [Header("Dynamic")]
     public GameObject launchPoint;
@@ -90,6 +90,7 @@ void Update()
             MissionDemolition.SHOT_FIRED();
 
             lineRend.enabled = false; //line render
+            snapSound.Play(); //snap sound
             
         }
 
