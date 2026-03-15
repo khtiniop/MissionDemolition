@@ -6,13 +6,22 @@ using UnityEngine;
 public class Goal : MonoBehaviour
 {
     static public bool goalMet = false;
+    private AudioSource goalSound; //nice
 
+
+    void Start()
+{
+    goalSound = GetComponent<AudioSource>();
+}
     void OnTriggerEnter( Collider other)
     {
         Projectile proj = other.GetComponent<Projectile>();
         if(proj!= null)
         {
             Goal.goalMet = true;
+            
+            goalSound.Play(); //nice
+
             Material mat = GetComponent<Renderer>().material;
             Color c = mat.color;
             c.a = 0.75f;
